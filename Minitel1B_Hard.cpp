@@ -41,6 +41,12 @@ Minitel::Minitel(HardwareSerial& serial) : mySerial(serial) {
   // le Minitel et le périphérique est de 1200 bauds par défaut.
   mySerial.begin(1200);
 }
+
+Minitel::Minitel(HardwareSerial& serial, int8_t rxPin, int8_t txPin) : mySerial(serial) {
+  // A la mise sous tension du Minitel, la vitesse des échanges entre
+  // le Minitel et le périphérique est de 1200 bauds par défaut.
+  mySerial.begin(1200, SERIAL_8N1, rxPin, txPin);
+}
 /*--------------------------------------------------------------------*/
 
 void Minitel::writeByte(byte b) {

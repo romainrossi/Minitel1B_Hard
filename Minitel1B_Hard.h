@@ -267,6 +267,7 @@ class Minitel
 {
 public:
   Minitel(HardwareSerial& serial);
+  Minitel(HardwareSerial& serial, int8_t rxPin, int8_t txPin);
   
   // Ecrire un octet, un mot ou un code de 4 octets maximum / Lire un octet
   void writeByte(byte b);
